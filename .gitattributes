@@ -1,0 +1,8 @@
+# Normalise text files; never alter binary assets
+* text=auto
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
