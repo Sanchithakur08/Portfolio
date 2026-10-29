@@ -60,6 +60,12 @@ It also includes a hidden honeypot field to filter basic spam bots.
 
 ## Deploying
 
-Any static host works (Vercel, Netlify, GitHub Pages, Cloudflare Pages): build command `npm run build`, output
-directory `dist`. After deploying, replace `https://your-domain.com` in `index.html`, `public/robots.txt` and
-`public/sitemap.xml`.
+Live at **https://portfolio-2-mat3.onrender.com**, deployed as a Render **Static Site** that rebuilds on every push to
+`main`.
+
+| Setting           | Value                              |
+| ----------------- | ---------------------------------- |
+| Build command     | `npm install && npm run build`     |
+| Publish directory | `dist`                             |
+
+If the URL changes (e.g. a custom domain), update it in `index.html`, `public/robots.txt` and `public/sitemap.xml`.

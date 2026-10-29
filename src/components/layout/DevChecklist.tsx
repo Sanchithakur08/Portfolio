@@ -46,7 +46,6 @@ export function DevChecklist() {
       if (!isSet(e.institution) || !isSet(e.period)) items.push(`education.ts → ${e.short} institution & years`);
     });
     if (!import.meta.env.VITE_FORMSPREE_FORM_ID) items.push('.env → VITE_FORMSPREE_FORM_ID (contact form)');
-    items.push('index.html, robots.txt, sitemap.xml → replace your-domain.com');
     return items;
   }, [resumeIsPlaceholder]);
 
