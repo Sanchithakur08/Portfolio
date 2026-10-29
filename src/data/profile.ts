@@ -18,25 +18,25 @@ export const profile = {
 
   /** Paragraphs for the About section. */
   bio: [
-    "I'm a Software Engineer focused on full-stack development. I enjoy turning ideas into well-structured, user-friendly products — designing REST APIs and relational data models on the back end, and crafting clean, responsive interfaces on the front end.",
-    "I hold a Bachelor of Computer Applications (BCA) and I'm currently pursuing a Master of Computer Applications (MCA). My journey started with a Java Swing + JDBC Employee Management System, and since then I've built full-stack projects like SmartHire, GlowMart, AssetTrack and Chatverse to practise real-world engineering: clear architecture, type safety, testing and version control.",
+    "I'm a Junior Software Developer at The Outsource Pro, with hands-on experience in Java and full-stack, automation-based projects. Day to day I work on real-time client applications — debugging, maintenance and production support — after starting there as a front-end intern building React interfaces.",
+    "I hold a Bachelor of Computer Applications (BCA) and I'm pursuing a Master of Computer Applications (MCA) at LPU, specialising in AI/ML. My journey started with a Java Swing + JDBC Employee Management System; since then I've built AI-integrated and full-stack applications like SmartHire, GlowMart and AssetTrack, and I'm focused on growing my back-end and AI-driven development skills.",
   ],
 
   /** Shown as a status pill in the hero and contact section. */
   availability: 'Open to software development roles',
 
   /** Optional, e.g. 'Pune, India'. Leave '' to hide. */
-  location: '',
+  location: 'Bengaluru, India',
 
   // TODO: replace with your real details
-  email: 'your.email@example.com',
+  email: 'sanchithakur303@gmail.com',
   social: {
     github: 'https://github.com/Sanchithakur08',
     linkedin: 'https://www.linkedin.com/in/your-linkedin-username',
   },
 
   /** TODO: put your photo at public/images/profile.jpg, then set '/images/profile.jpg'. */
-  photo: '',
+  photo: '/images/profile.png',
 
   /** TODO: replace public/resume/Sanchi_Thakur_Resume.pdf with your real resume (keep the name or update both). */
   resume: {

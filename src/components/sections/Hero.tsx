@@ -7,10 +7,10 @@ import { HeroBackground } from './HeroBackground';
 
 export function Hero() {
   return (
-    <section id="home" aria-label="Introduction" className="relative flex min-h-[100svh] items-center overflow-hidden pt-16">
+    <section id="home" aria-label="Introduction" className="relative flex min-h-[88svh] items-center overflow-hidden pt-16">
       <HeroBackground />
 
-      <div className="container-x relative grid items-center gap-14 py-20 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+      <div className="container-x relative grid items-center gap-10 py-14 lg:grid-cols-[1.15fr_1fr] lg:gap-12">
         <div>
           <p className="mb-6 inline-flex animate-fade-up items-center gap-2.5 rounded-full border border-emerald-400/20 bg-emerald-400/[0.06] px-3.5 py-1.5 text-xs font-medium text-emerald-200">
             <span className="relative flex h-2 w-2" aria-hidden="true">
@@ -21,24 +21,24 @@ export function Hero() {
           </p>
 
           <h1
-            className="animate-fade-up text-[2.75rem] font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="animate-fade-up text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl"
             style={{ animationDelay: '80ms' }}
           >
             {profile.name}
-            <span className="mt-3 block text-2xl font-bold leading-tight sm:text-4xl lg:text-[2.6rem]">
+            <span className="mt-3 block text-xl font-bold leading-tight sm:text-2xl lg:text-3xl">
               <span className="text-gradient">{profile.role}</span>
               <span className="whitespace-nowrap text-slate-500"> · Full-Stack</span>
             </span>
           </h1>
 
           <p
-            className="mt-6 max-w-xl animate-fade-up text-base leading-relaxed text-slate-400 sm:text-lg"
+            className="mt-5 max-w-xl animate-fade-up text-sm leading-relaxed text-slate-400 sm:text-base"
             style={{ animationDelay: '160ms' }}
           >
             {profile.intro}
           </p>
 
-          <div className="mt-9 flex animate-fade-up flex-wrap gap-3" style={{ animationDelay: '240ms' }}>
+          <div className="mt-7 flex animate-fade-up flex-wrap gap-3" style={{ animationDelay: '240ms' }}>
             <ButtonLink href="#projects">
               View Projects
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
@@ -53,7 +53,7 @@ export function Hero() {
             </ButtonLink>
           </div>
 
-          <SocialLinks className="mt-10 animate-fade-up [animation-delay:320ms]" />
+          <SocialLinks className="mt-8 animate-fade-up [animation-delay:320ms]" />
         </div>
 
         <div className="hidden animate-fade-up lg:block" style={{ animationDelay: '200ms' }}>

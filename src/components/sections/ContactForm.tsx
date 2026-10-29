@@ -101,12 +101,12 @@ export function ContactForm() {
   const submitting = status.kind === 'submitting';
 
   return (
-    <form noValidate onSubmit={onSubmit} className="surface relative rounded-3xl p-6 sm:p-8">
+    <form noValidate onSubmit={onSubmit} className="surface relative rounded-2xl p-5 sm:p-6">
       {!configured && (
         <DevHint className="mb-5">Set VITE_FORMSPREE_FORM_ID in .env, or a real email in profile.ts</DevHint>
       )}
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2">
         <Field id={`${uid}-name`} label="Name" error={errors.name}>
           <input
             id={`${uid}-name`}
@@ -138,11 +138,11 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <Field id={`${uid}-message`} label="Message" error={errors.message} className="mt-5">
+      <Field id={`${uid}-message`} label="Message" error={errors.message} className="mt-4">
         <textarea
           id={`${uid}-message`}
           name="message"
-          rows={5}
+          rows={4}
           value={fields.message}
           onChange={onChange}
           placeholder="Tell me about the role or project…"
@@ -166,7 +166,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <Button type="submit" disabled={submitting} className="w-full sm:w-auto">
           {submitting ? (
             <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />
@@ -200,7 +200,7 @@ export function ContactForm() {
 
 function inputClass(error?: string) {
   return cn(
-    'block w-full rounded-xl border bg-ink-950/60 px-4 py-3 text-sm text-white placeholder:text-slate-600 transition',
+    'block w-full rounded-xl border bg-ink-950/60 px-3.5 py-2.5 text-sm text-white placeholder:text-slate-600 transition',
     'focus:outline-none focus:ring-2',
     error
       ? 'border-rose-400/50 focus:border-rose-400/60 focus:ring-rose-400/20'

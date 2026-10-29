@@ -2,11 +2,13 @@ import { isDev } from '../lib/placeholder';
 
 export interface Certificate {
   title: string;
-  /** Issuing organisation, e.g. 'Coursera', 'Udemy', 'NPTEL'. Leave '' to hide. */
+  /** Issuing organisation. Leave '' to hide. */
   issuer: string;
-  /** e.g. 'Mar 2025'. Leave '' to hide. */
+  /** e.g. '2025'. Leave '' to hide. */
   date: string;
-  /** Public verification link. Leave '' if none — the "Verify credential" link is hidden. */
+  /** One line on what the course covered. */
+  description: string;
+  /** Optional public verification link — the "Verify credential" link is hidden when ''. */
   credentialUrl: string;
   /** Optional credential ID shown under the title. */
   credentialId?: string;
@@ -15,31 +17,30 @@ export interface Certificate {
   placeholder?: boolean;
 }
 
-/**
- * TODO: fill in issuer, date and credentialUrl for each certificate.
- * ⚠️ VERIFY the skill tags match what each course actually covered.
- */
 export const certificates: Certificate[] = [
   {
-    title: 'Java Full Stack Development',
-    issuer: '',
-    date: '',
+    title: 'Java Full Stack Developer',
+    issuer: 'MITS Academy',
+    date: '2025',
+    description: 'Core & Advanced Java back-end development along with front-end fundamentals.',
     credentialUrl: '',
-    skills: ['Java', 'Spring Boot', 'SQL', 'Web Development'],
+    skills: ['Core Java', 'Advanced Java', 'Back-end', 'Front-end'],
   },
   {
-    title: 'Python',
-    issuer: '',
-    date: '',
+    title: 'Python Programming — Basic',
+    issuer: 'CACMS Institute',
+    date: '2024',
+    description: 'Fundamentals of Python including variables, data types, conditional statements, loops and functions.',
     credentialUrl: '',
     skills: ['Python', 'Programming Fundamentals'],
   },
   {
-    title: 'Advanced Excel',
-    issuer: '',
-    date: '',
+    title: 'Advanced Microsoft Excel',
+    issuer: 'CACMS Institute',
+    date: '2024',
+    description: 'Excel functions, data analysis, PivotTables, VLOOKUP, charts and dashboard creation.',
     credentialUrl: '',
-    skills: ['Microsoft Excel', 'Formulas', 'Data Analysis'],
+    skills: ['Excel', 'PivotTables', 'VLOOKUP', 'Dashboards'],
   },
 ];
 

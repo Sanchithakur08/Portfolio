@@ -29,7 +29,7 @@ export function CodeCard() {
           <span className="h-3 w-3 rounded-full bg-[#28c840]/80" />
           <figcaption className="ml-3 font-mono text-xs text-slate-500">engineer.ts</figcaption>
         </div>
-        <pre className="overflow-x-auto p-5 font-mono text-[13px] leading-7 text-slate-300">
+        <pre className="overflow-x-auto p-4 font-mono text-xs leading-6 text-slate-300">
           <code>
             <C>// Hello, recruiter 👋</C>
             {'\n'}

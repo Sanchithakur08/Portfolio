@@ -30,17 +30,17 @@ export function Contact() {
         description="I'm currently looking for software development opportunities. Whether you have a role in mind or just want to connect, my inbox is open."
       />
 
-      <div className="relative grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-14">
+      <div className="relative grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-10">
         <Reveal>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {links.map(({ label, href, value, icon: Icon, external }) => (
               <a
                 key={label}
                 href={href}
                 {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="group flex items-center gap-4 rounded-2xl border border-white/[0.07] bg-ink-900/60 p-4 transition hover:-translate-y-0.5 hover:border-violet-400/30"
+                className="group flex items-center gap-4 rounded-2xl border border-white/[0.07] bg-ink-900/60 p-3.5 transition hover:-translate-y-0.5 hover:border-violet-400/30"
               >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-violet-500/10 text-violet-200">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-violet-500/10 text-violet-200">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <span className="min-w-0 flex-1">
@@ -63,7 +63,7 @@ export function Contact() {
               </p>
             )}
 
-            <div className="rounded-2xl border border-white/[0.07] bg-gradient-to-br from-violet-500/10 to-blue-500/10 p-6">
+            <div className="rounded-2xl border border-white/[0.07] bg-gradient-to-br from-violet-500/10 to-blue-500/10 p-5">
               <p className="text-sm font-semibold text-white">Prefer the details on paper?</p>
               <p className="mt-1 text-sm text-slate-400">Grab a copy of my resume.</p>
               <ButtonLink

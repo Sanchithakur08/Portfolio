@@ -27,19 +27,25 @@ function ProjectMedia({ project }: { project: Project }) {
   const accent = accents[project.accent];
   const Icon = project.icon;
 
-  return (
-    <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/[0.08] bg-ink-850">
-      {isSet(project.image) ? (
+  // Wide frame so app screenshots (usually ~2:1) fit with minimal cropping;
+  // anchored top-left to keep the logo and navigation in view.
+  if (isSet(project.image)) {
+    return (
+      <div className="relative aspect-[2/1] overflow-hidden rounded-xl border border-white/[0.08] bg-ink-850">
         <img
           src={project.image}
           alt={project.imageAlt}
-          width={1600}
-          height={1000}
           loading="lazy"
           decoding="async"
-          className="h-full w-full object-cover object-top transition duration-700 ease-out group-hover:scale-[1.03]"
+          className="h-full w-full object-cover object-left-top transition duration-700 ease-out group-hover:scale-[1.03]"
         />
-      ) : (
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative aspect-[2/1] overflow-hidden rounded-xl border border-white/[0.08] bg-ink-850">
+      {(
         // Styled browser-window mock shown until a screenshot is added.
         <div aria-hidden="true" className="absolute inset-0">
           <div className={cn('absolute inset-0 bg-gradient-to-br to-transparent', accent.glow)} />
@@ -85,49 +91,46 @@ function ProjectMedia({ project }: { project: Project }) {
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
   const accent = accents[project.accent];
-  const reversed = index % 2 === 1;
   const hasGithub = isSet(project.github);
   const hasLive = isSet(project.live);
 
   return (
-    <Reveal>
+    <Reveal delay={(index % 2) * 80} className="h-full">
       <article
         onMouseMove={trackSpotlight}
         aria-labelledby={`project-${project.id}`}
-        className="spotlight group grid items-center gap-8 rounded-3xl border border-white/[0.07] bg-ink-900/50 p-4 transition-colors duration-300 hover:border-white/[0.12] sm:p-6 lg:grid-cols-12 lg:gap-10 lg:p-8"
+        className="spotlight group flex h-full flex-col rounded-2xl border border-white/[0.07] bg-ink-900/50 p-3 transition duration-300 hover:-translate-y-1 hover:border-white/[0.12] hover:shadow-[0_20px_50px_-20px_rgb(124_58_237/0.35)]"
       >
-        <div className={cn('lg:col-span-7', reversed && 'lg:order-last')}>
-          <ProjectMedia project={project} />
-        </div>
+        <ProjectMedia project={project} />
 
-        <div className="px-1 pb-2 sm:px-0 lg:col-span-5 lg:pb-0">
-          <p className={cn('font-mono text-xs uppercase tracking-[0.18em]', accent.text)}>
+        <div className="flex flex-1 flex-col px-2 pb-2 pt-5 sm:px-3">
+          <p className={cn('font-mono text-[11px] uppercase tracking-[0.16em]', accent.text)}>
             {String(index + 1).padStart(2, '0')} · {project.tagline}
           </p>
-          <h3 id={`project-${project.id}`} className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+          <h3 id={`project-${project.id}`} className="mt-2 text-xl font-bold tracking-tight text-white">
             {project.title}
           </h3>
-          <p className="mt-4 leading-relaxed text-slate-400">{project.description}</p>
+          <p className="mt-2 text-sm leading-relaxed text-slate-400">{project.description}</p>
 
-          <ul className="mt-6 space-y-2.5">
+          <ul className="mt-4 space-y-1.5">
             {project.features.map((feature) => (
-              <li key={feature} className="flex gap-3 text-sm leading-relaxed text-slate-300">
-                <CircleCheck className={cn('mt-0.5 h-4 w-4 shrink-0', accent.text)} aria-hidden="true" />
+              <li key={feature} className="flex gap-2.5 text-[13px] leading-snug text-slate-300">
+                <CircleCheck className={cn('mt-px h-3.5 w-3.5 shrink-0', accent.text)} aria-hidden="true" />
                 {feature}
               </li>
             ))}
           </ul>
 
-          <ul className="mt-6 flex flex-wrap gap-2" aria-label="Technologies used">
+          <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies used">
             {project.tech.map((t) => (
               <li key={t}>
-                <Tag>{t}</Tag>
+                <Tag className="px-2.5 py-0.5 text-[11px]">{t}</Tag>
               </li>
             ))}
           </ul>
 
           {(hasGithub || hasLive) && (
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-auto flex flex-wrap gap-2 pt-5">
               {hasLive && (
                 <ButtonLink href={project.live} target="_blank" rel="noopener noreferrer" size="sm">
                   Live demo
@@ -145,7 +148,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             </div>
           )}
           {!hasGithub && !hasLive && (
-            <DevHint className="mt-6">Add github / live URLs in projects.ts (only if public)</DevHint>
+            <DevHint className="mt-auto self-start pt-1">Add github / live URLs in projects.ts (only if public)</DevHint>
           )}
         </div>
       </article>

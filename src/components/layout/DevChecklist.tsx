@@ -40,7 +40,7 @@ export function DevChecklist() {
     items.push('projects.ts → verify every description, feature & tech stack');
     if (experience.some((e) => e.placeholder)) items.push('experience.ts → replace or delete the template role');
     certificates.forEach((c) => {
-      if (!isSet(c.issuer) || !isSet(c.date) || !isSet(c.credentialUrl)) items.push(`certificates.ts → ${c.title} issuer, date & link`);
+      if (!isSet(c.issuer) || !isSet(c.date)) items.push(`certificates.ts → ${c.title} issuer & date`);
     });
     education.forEach((e) => {
       if (!isSet(e.institution) || !isSet(e.period)) items.push(`education.ts → ${e.short} institution & years`);

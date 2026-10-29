@@ -16,17 +16,17 @@ export function Projects() {
         index={sectionIndex('projects')}
         eyebrow="Featured Projects"
         title="Things I've built"
-        description="Full-stack projects spanning AI-assisted hiring, e-commerce, business tooling and real-time communication — plus the desktop Java app where it all started."
+        description="Full-stack projects spanning AI-assisted hiring, e-commerce and business tooling — plus the desktop Java app where it all started."
       />
 
-      <div className="space-y-8 sm:space-y-10">
+      <div className="grid gap-5 md:grid-cols-2">
         {projects.map((project, i) => (
           <ProjectCard key={project.id} project={project} index={i} />
         ))}
       </div>
 
       {isSet(profile.social.github) && (
-        <Reveal className="mt-12 flex justify-center">
+        <Reveal className="mt-8 flex justify-center">
           <ButtonLink href={profile.social.github} target="_blank" rel="noopener noreferrer" variant="secondary">
             <GitHubIcon className="h-4 w-4" />
             More on GitHub
